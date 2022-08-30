@@ -8,6 +8,7 @@ plugins {
 
 group = 'com.crud'
 version = '0.0.1-SNAPSHOT'
+sourceCompatibility = '11'
 
 
 repositories {
@@ -21,22 +22,23 @@ jar {
 dependencies {
 	implementation 'org.springframework.boot:spring-boot-starter-web'
 	implementation 'org.springframework.boot:spring-boot-starter-validation'
-	testImplementation ('org.springframework.boot:spring-boot-starter-test') {
-		exclude group: 'org.junit.vintage', module: 'junit-vintage-engine'
-	}
+	testImplementation 'org.springframework.boot:spring-boot-starter-test'
 	implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
+	testImplementation 'org.springframework.boot:spring-boot-starter-test'
 
 	compileOnly 'org.projectlombok:lombok:1.18.24'
-	//runtimeOnly 'mysql:mysql-connector-java'
+	runtimeOnly 'mysql:mysql-connector-java'
 	runtimeOnly 'org.postgresql:postgresql:42.4.2'
 
 	annotationProcessor 'org.projectlombok:lombok:1.18.24'
 
 	testCompileOnly 'org.projectlombok:lombok:1.18.24'
 	testAnnotationProcessor 'org.projectlombok:lombok:1.18.24'
+	implementation 'org.springframework.boot:spring-boot-starter-mail'
 
 	//providedRuntime 'org.springframework.boot:spring-boot-starter-tomcat'
 
+	implementation 'org.springdoc:springdoc-openapi-ui:1.6.9'
 
 }
 
