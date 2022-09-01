@@ -11,6 +11,8 @@ import java.util.List;
 
 @Data
 @JsonIgnoreProperties(ignoreUnknown = true)
+@AllArgsConstructor
+@NoArgsConstructor
 public class TrelloBoardDto {
 
     @JsonProperty("id")
@@ -19,8 +21,8 @@ public class TrelloBoardDto {
     @JsonProperty("name")
     private String id;
 
-    @JsonProperty("closed")
-    private boolean isClosed;
+   // @JsonProperty("closed")
+   // private boolean isClosed;
 
     @JsonProperty("lists")
     private List<TrelloListDto> lists;
