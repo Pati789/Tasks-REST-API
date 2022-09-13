@@ -20,17 +20,14 @@ import org.springframework.test.web.servlet.result.MockMvcResultMatchers;
 import static org.junit.jupiter.api.Assertions.*;
 import static org.mockito.Mockito.*;
 
-
 @SpringJUnitWebConfig
 @WebMvcTest(TaskController.class)
 class TaskControllerTest {
 
     @Autowired
     private MockMvc mockMvc;
-
     @MockBean
     private DbService dbService;
-
     @MockBean
     private TaskMapper taskMapper;
 
@@ -57,7 +54,6 @@ class TaskControllerTest {
         Task task = new Task(1L, "test title", "test content");
         TaskDto updatedTaskDto = new TaskDto(1L, "updated test title", "updated test content");
 
-
         when(taskMapper.mapToTask(taskDto)).thenReturn(task);
         when(dbService.saveTask(task)).thenReturn(task);
         when(taskMapper.mapToTaskDto(any())).thenReturn(updatedTaskDto);
@@ -74,7 +70,6 @@ class TaskControllerTest {
                         .content(jsonContent))
                 .andExpect(MockMvcResultMatchers.status().is(200))
                 .andExpect(MockMvcResultMatchers.jsonPath("$.title", Matchers.is("updated test title")));
-
     }
 
     @Test
@@ -96,11 +91,5 @@ class TaskControllerTest {
                         .characterEncoding("UTF-8")
                         .content(jsonContent))
                 .andExpect(MockMvcResultMatchers.status().is(200));
-
-
-
     }
-
-
-
 }

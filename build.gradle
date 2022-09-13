@@ -25,6 +25,7 @@ dependencies {
 	testImplementation 'org.springframework.boot:spring-boot-starter-test'
 	implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
 	testImplementation 'org.springframework.boot:spring-boot-starter-test'
+	implementation 'org.springframework.boot:spring-boot-starter-actuator:2.6.3'
 	testImplementation 'com.google.code.gson:gson'
 
 	compileOnly 'org.projectlombok:lombok:1.18.24'
@@ -36,6 +37,7 @@ dependencies {
 	testCompileOnly 'org.projectlombok:lombok:1.18.24'
 	testAnnotationProcessor 'org.projectlombok:lombok:1.18.24'
 	implementation 'org.springframework.boot:spring-boot-starter-mail'
+
 
 	//providedRuntime 'org.springframework.boot:spring-boot-starter-tomcat'
 
